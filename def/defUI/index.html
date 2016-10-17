@@ -1,0 +1,79 @@
+<html lang="en" ng-app="def">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/angular-material.css">
+<link rel="stylesheet" href="assets/css/DEFstyles.css">
+<link rel="stylesheet" 	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>DEF</title>
+</head>
+<body ng-cloak ng-controller="AppCtrl">
+
+<!--  Framework specific -->
+	  <script src="assets/libs/angular.min.js"></script>
+	  <script src="assets/libs/angular-animate.min.js"></script>
+	  <script src="assets/libs/angular-aria.min.js"></script>
+	  <script src="assets/libs/angular-messages.min.js"></script>
+	 <script src="assets/libs/angular-material.js"></script>
+	 
+	 
+	 
+	  <!--  Project  specific -->
+	<script src="components/app.module.js"></script>
+	<script src="shared/defFactory.js"></script>
+	<script src="components/projectmetadata/projectmetadataController.js"></script>
+	<script src="components/team/teamController.js"></script>
+	<script src="components/buildpack/buildpackController.js"></script>
+	<script src="components/cdcycle/cdcyleController.js"></script>
+	<script src="components/services/servicesController.js"></script>
+	<script src="components/summary/summaryController.js"></script>
+	<script src="components/alm/almController.js"></script>
+    <script src="components/sizing/sizing.controller.js"></script>
+	<!-- <script src="assets/libs/angular-route.min.js"></script> -->
+	<!-- <script src="assets/libs/angular-resource-1.2.3.js"></script> -->
+	
+	
+	
+		
+	<md-toolbar class="md-primary">
+		<div class="md-toolbar-tools">
+			<img class="md-image img-responsive" src="assets/img/logo_altimetrik.png"	style="height: 80%">
+			<h1 class="md-flex">&nbsp; &nbsp; &nbsp; Developer Enablement Framework</h1>
+		</div>
+	</md-toolbar>
+	<md-content>
+	<md-button ng-show="selectedIndex > 0" class=" md-raised md-primary" ng-click="downIndex()">Prev</md-button>
+    <md-button ng-show="selectedIndex < 7" class="md-raised md-primary" ng-click="upIndex()">Next</md-button>
+	<md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex"> 
+		<md-tab label="Project Metadata" >		 
+       		<md-content> <div ng-include='"components/projectmetadata/projectmetadataView.html"'></div></md-content>              
+        </md-tab> 
+        <md-tab label="TEAM"  class="md-padding">		 
+	        <md-content>  <div ng-include='"components/team/teamView.html"'></div></md-content>
+		</md-tab>
+        <md-tab label="Build Pack"  class="md-padding">		 
+	        <md-content>  <div ng-include='"components/buildpack/buildpackView.html"'></div></md-content>
+		</md-tab>
+		<md-tab label="CD Cycle"  class="md-padding">		 
+	        <md-content>  <div ng-include='"components/cdcycle/cdcycleView.html"'></div></md-content>
+		</md-tab>
+	<md-tab label="Services"  class="md-padding">		 
+	        <md-content>  <div ng-include='"components/services/servicesView.html"'></div></md-content>
+	</md-tab>
+	<md-tab label="Sizing"  class="md-padding">		 
+        <md-content>  <div ng-include='"components/sizing/sizing.html"'></div></md-content>
+	</md-tab>
+	<md-tab label="alm"  class="md-padding">		 
+        <md-content>  <div ng-include='"components/alm/almView.html"'></div></md-content>
+	</md-tab>
+	<md-tab label="Summary"  on class="md-padding">		 
+        <md-content>  <div ng-include='"components/summary/summaryView.html"'></div></md-content>
+	</md-tab>
+ </md-tabs>
+	 </md-content>
+	 <div layout="row">
+    
+  <div>
+	  
+	
+</body>
+</html>

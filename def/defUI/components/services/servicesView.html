@@ -1,0 +1,43 @@
+<div ng-controller="servicesController" layout="column" layout-align="center center" ng-cloak="" 
+    class="chipsdemoContactChips">
+    <h2 class="md-title">{{def.program.project.projectName}}</h2> 
+    <md-content class="md-padding autocomplete" layout="column">                
+        <label for="serviceChip">Servicess</label> 
+        <md-chips id="serviceChip" ng-model="def.program.project.services" md-autocomplete-snap       
+            md-require-match="autoCompleteRequireMatch"> 
+                <md-autocomplete
+                    md-selected-item="selectedService"
+                    md-search-text="searchService"
+                    md-items="service in queryServiceSearch(searchService)"
+                    md-item-text="service.name"
+                    placeholder="Search for a service">
+                    <span md-highlight-text="searchText">{{service.name}}</span>
+                </md-autocomplete>
+                <md-chip-template>
+                    <span>
+                        <strong>{{$chip.name}}</strong>                
+                    </span>
+                </md-chip-template>
+        </md-chips> 
+    </md-content>
+    <md-content class="md-padding autocomplete" layout="column">
+        <label for="customServiceChip">Custome Service</label> 
+        <md-chips id="customServiceChip" ng-model="def.program.project.customServices" md-autocomplete-snap       
+            md-require-match="autoCompleteRequireMatch"> 
+              <md-autocomplete
+                    md-selected-item="selectedCustomService"
+                    md-search-text="searchCustomeService"
+                    md-items="customService in queryCustomServiceSearch(searchCustomeService)"
+                    md-item-text="customService.name"
+                    placeholder="Search for a custome service">
+                    <span md-highlight-text="searchText">{{customService.name}}</span>
+                </md-autocomplete>
+
+                <md-chip-template>
+                    <span>
+                        <strong>{{$chip.name}}</strong>                
+                    </span>
+                </md-chip-template>
+        </md-chips>
+    </md-content>
+</div>

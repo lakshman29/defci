@@ -1,0 +1,28 @@
+---
+resources:
+- name: source-code
+  type: git
+  source:
+    uri: https://github.com/lakshman29/concourse-maven-cf-simple.git
+    branch: master
+
+- name: cf
+  type: cf
+  source:
+    api: {{api-value}}
+    username: {{username-value}}
+    password: {{password-value}}
+    organization: {{organization-value}}
+    space: {{ space-value}}
+    skip_cert_check: {{skip_cert_check-value}}
+
+jobs:
+- name: build
+  public: true
+  plan:
+  - get: source-code
+    trigger: true  
+  - put: cf
+    params:
+      manifest: source-code/manifest.yml
+      path: source-code/def

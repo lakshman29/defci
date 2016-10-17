@@ -1,0 +1,55 @@
+<div class="row" ng-controller="projectmetadataController as pmeta">
+    <form role="form" name="initform" novalidate>
+        <fieldset>
+             <div layout="row" layout-align="start start">
+                 <h3>Initiate / Update Project</h3>
+             </div> 
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap> 
+                    <div layout="row" layout-xs="column">
+                        <div flex> 
+                            <div layout="row" flex>
+                            <md-input-container>
+                            	<label for="prgselect">Create/Select Program</label>
+	                            <md-select placeholder="Create/Select Program" ng-model="def.s_program" 
+                                    id="prgselect" md-on-open="loadPrograms()"   
+	                            	ng-change="checkProgram();projectFlag=true ;" style="min-width: 200px;" 
+                                    ng-click="def.s_project.projectName=''";>
+                                    <md-option ng-value="user" ng-repeat="user in users">{{user.programName}}</md-option>
+	   							 </md-select> 
+   							 </md-input-container>  
+   							 
+   							 </div>
+   							 <div layout="row" flex ng-if="def.s_program.programId" ng-show="projectFlag">
+   							  <md-input-container>
+   							  	<label>Create/Select Project</label>
+	                            <md-select placeholder="Projects" ng-model="def.s_project" md-on-open="loadProjects()"  
+	                            		ng-change="check()" style="min-width: 200px;"> 
+                                    <md-option ng-value="project"  ng-repeat="project in projects">{{project.projectName}}</md-option> <!-- ng-selected="{{$first}}" -->
+	   							</md-select>
+                             </md-input-container>
+                             </div>
+                             
+                             <div layout="row" flex ng-show="def.s_program.programName=='New Program'">
+   								<md-input-container>
+							       <label>Program Name</label>
+							        <input ng-model="def.program.programName">
+						        </md-input-container>
+                            </div>
+                            <div layout="row" flex ng-show="def.s_project.projectName=='New Project'|| def.s_program.programName=='New Program'">
+                                <md-input-container>
+                                    <label>Project Name</label>
+                                    <input  ng-model="def.program.project.projectName">
+                                </md-input-container>
+                           </div>
+                           
+                            
+                            
+                            <br />
+                            
+                        </div>
+                    </div>
+                </section>
+           <!-- <pre>{{def|json}}</pre>   -->            
+        </fieldset>
+    </form>
+</div>

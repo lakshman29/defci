@@ -1,0 +1,14 @@
+<div ng-controller="teamController as ctrl" layout="column" layout-align="center center" ng-cloak="" 
+    class="chipsdemoContactChips">
+
+  <md-content class="md-padding autocomplete" layout="column">
+   
+    <br>
+    <h2 class="md-title">{{def.program.project.projectName}}</h2>
+    <md-contact-chips ng-model="def.program.project.team" md-contacts="delayedQuerySearch($query)"
+      md-contact-name="name"  md-require-match="true"
+      md-highlight-flags="i" filter-selected="filterSelected" placeholder="Add Team Members">
+    </md-contact-chips>
+  </md-content>
+  <!-- {{def.program.project.team}} -->
+</div>    

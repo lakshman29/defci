@@ -1,0 +1,96 @@
+<div class="row" ng-controller="cdcyleController as cdcycle">
+    <form role="form" name="bpacksform" novalidate>
+        <fieldset>            
+  			 <div class="form-group">
+                   <section layout="row" layout-sm="column" layout-align="center center" layout-wrap> 
+                    <div layout="row" layout-xs="column">
+                     <div flex>
+                        <p class="md-title" layout="row" layout-align="center center">{{def.program.project.ciCd[0].env}}</p>
+                        <span>Entry criteria <span class="valid">*</span></span>
+                        <md-select id="deventry" name="deventry" ng-model="def.program.project.ciCd[0].criteria" required="">
+                            <md-option value="occ">On Code Commit</md-option>
+                            <md-option value="ev4">Every 4 Hours</md-option>
+                            <md-option value="ev12">Every 12 Hours</md-option>
+                        </md-select>
+                        <md-checkbox ng-repeat="option in def.program.project.ciCd[0].buildActivity" ng-model="option.value" layout="column">
+   							  {{option.name}}
+						</md-checkbox>
+                      
+                    </div>
+                    <md-divider class="vertical-divider"></md-divider>
+                    <div flex class="P_L_1">
+                        <p class="md-title" layout="row" layout-align="center center">{{def.program.project.ciCd[1].env}} </p>
+                        <span>Entry criteria <span class="valid">*</span></span>
+                        <md-select id="qeentry" name="qeentry" class="form-control" ng-model="def.program.project.ciCd[1].criteria" required="">
+                            <md-option value="obs">On Buid Success</md-option>
+                            <md-option value="od">On Deploy</md-option>
+                            <md-option value="ev4">Every 4 Hours</md-option>
+                            <md-option value="ev12">Every 12 Hours</md-option>
+                        </md-select>
+                        
+                        <md-checkbox ng-repeat="option in def.program.project.ciCd[1].buildActivity" ng-model="option.value" layout="column">
+   							  {{option.name}}
+						</md-checkbox>
+                      
+                        
+                    </div>
+                    <md-divider class="vertical-divider"></md-divider>
+                    <div flex class="P_L_1">
+                        <p class="md-title" layout="row" layout-align="center center">{{def.program.project.ciCd[2].env}}</p>
+                        <span>Entry criteria <span class="valid">*</span></span>
+                        <md-select id="stgentry" name="stgentry" class="form-control" ng-model="def.program.project.ciCd[2].criteria" required="">
+                            <md-option value="obs">On Buid Success</md-option>
+                            <md-option value="od">On Deploy</md-option>
+                            <md-option value="ev4">Every 4 Hours</md-option>
+                            <md-option value="ev12">Every 12 Hours</md-option>
+                        </md-select>
+                         
+                          <md-checkbox ng-repeat="option in def.program.project.ciCd[2].buildActivity" ng-model="option.value" layout="column">
+   							  {{option.name}}
+						</md-checkbox>
+                       
+                        
+                    </div>
+                    <md-divider class="vertical-divider"></md-divider>
+                    <div flex class="P_L_1">
+                       <p class="md-title" layout="row" layout-align="center center">{{def.program.project.ciCd[3].env}}</p>
+                        <span>Entry criteria <span class="valid">*</span></span>
+                        <md-select id="uatentry" name="uatentry" class="form-control" ng-model="def.program.project.ciCd[3].criteria" required="">
+                            <md-option value="obs">On Buid Success</md-option>
+                            <md-option value="od">On Deploy</md-option>
+                            <md-option value="ev4">Every 4 Hours</md-option>
+                            <md-option value="ev12">Every 12 Hours</md-option>
+                        </md-select>
+                        
+                          <md-checkbox ng-repeat="option in def.program.project.ciCd[3].buildActivity" ng-model="option.value" layout="column">
+   							  {{option.name}}
+						</md-checkbox>
+                      
+                    </div>
+                    <md-divider class="vertical-divider"></md-divider>
+                    <div flex class="P_L_1">
+                        <p class="md-title" layout="row" layout-align="center center">{{def.program.project.ciCd[4].env}}</p>
+                        <span>Entry criteria <span class="valid">*</span></span>
+                        <md-select tabindex="1" id="prodentry" name="prodentry" class="form-control" ng-model="def.program.project.ciCd[4].criteria" required="">
+                            <md-option value="obs">On Buid Success</md-option>
+                            <md-option value="od">On Deploy</md-option>
+                            <md-option value="ev4">Every 4 Hours</md-option>
+                            <md-option value="ev12">Every 12 Hours</md-option>
+                        </md-select>
+                        
+                          <md-checkbox ng-repeat="option in def.program.project.ciCd[4].buildActivity" ng-model="option.value" layout="column">
+   							  {{option.name}}
+						</md-checkbox>
+                       
+                    </div>
+                    
+                </div>
+                   </section>
+            </div>
+            
+            <!-- <pre>{{def.program.project.ciCd[0].criteria}}</pre>    -->  
+           
+                  
+        </fieldset>
+    </form>
+</div>

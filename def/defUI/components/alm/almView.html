@@ -1,0 +1,28 @@
+<div class="row" ng-controller="almController as almctrl">
+    <form role="form" name="almform" novalidate>
+        <fieldset>       
+            
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-content layout-padding>
+                    <md-input-container class="md-block">
+                        <label for="scm">SCM</label>
+                        <input id="scm" class="form-control" type="text" value="" name="scm" ng-model="def.program.project.alm.scm.name">
+                    </md-input-container>                                  
+                    <md-input-container class="md-block">
+                        <label for="pmtool">PM Tool</label>
+                        <input  id="pmtool" class="form-control" type="text" value="" name="pmtool" ng-model="def.program.project.alm.pmtool.name">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label for="cicd">CI / CD</label>
+                        <input  id="cicd" class="form-control" type="text" value="" name="cicd" ng-model="def.program.project.alm.cicd.name">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label for="monitor">Monitoring</label>
+                        <input  id="monitor" class="form-control" type="text" value="" name="monitor" ng-model="def.program.project.alm.monitor.name">
+                    </md-input-container> 
+                    </md-content>
+                </section>
+            <!-- <pre>{{def.program|json}}</pre> -->
+        </fieldset>
+    </form>
+</div>

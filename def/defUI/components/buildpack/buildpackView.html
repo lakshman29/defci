@@ -1,0 +1,99 @@
+<div class="row" ng-controller="buildpackController as bpackctrl">
+    <form role="form" name="bpacksform" novalidate ng-init="dependencies=false">
+        <fieldset>
+                   
+            <section layout-wrap flex id="bpacks_id"> 
+             <div layout="row" layout-xs="column" layout-align="center center" >
+               <div >                              
+                <div class="form-group">
+                    <p class="title" for="quota">Build Pack <span class="valid">*</span></p>
+                        <md-select tabindex="5" class="form-control" id="buildpacks" name="buildpacks" ng-model="def.program.project.bp.lang" required="">
+                        <md-option value="java" >Java</md-option>
+                        <md-option value="nodejs" disabled>NodeJs</md-option>
+                        <md-option value="php" disabled>PHP</md-option>
+                        <md-option value="binary" disabled>Binary</md-option>
+                        <md-option value="static" disabled>Static File</md-option>
+                    </md-select>
+                </div>
+                <div class="form-group" ng-if="def.program.project.bp.lang == 'java'">
+                    <label for="quota">Build Tools</label>
+                        <md-select tabindex="5" class="form-control" id="buildtool" name="buildtool" ng-model="def.program.project.bp.tool" required>
+                            
+                        <md-option value="maven" selected>Maven</md-option>
+                    </md-select>
+                </div>
+                <div class="form-group" ng-if="def.program.project.bp.lang == 'java'">
+                    <label for="packaging" class="control-label">Packaging</label>
+                    <md-select tabindex="8" class="form-control" id="packaging" name="packaging" ng-model="def.program.project.bp.pack">
+                        <md-option value="war" selected>War</md-option>
+                        <md-option value="jar">Jar</md-option>
+                    </md-select>
+                </div>
+                <div class="form-group" ng-if="def.program.project.bp.lang == 'java'">
+                    <label for="javaVersion" class="control-label">Java Version</label>
+                    <md-select tabindex="9" class="form-control" name="javaVersion" id="javaVersion" ng-model="def.program.project.bp.version">
+                        <md-option value="1.8">1.8</md-option>
+                        <md-option value="1.7" selected>1.7</md-option>
+                        <md-option value="1.6">1.6</md-option>
+                    </md-select>
+                </div>
+                    <!--<tag-manager tags="formData.dependency" autocomplete="bpackctrl.allDependency"></tag-manager>-->
+                <div class="form-group">
+                   <label for="team">Dependencies</label><br />
+                    <md-chips
+	                    ng-model="def.program.project.bp.dependencies"
+	                    placeholder="Enter a Dependency"
+	                    delete-button-label="Remove Dependency"
+	                    delete-hint="Press delete to remove Dependency"
+	                    secondary-placeholder="+Dependency"
+	                    md-require-match="true"
+	                    md-on-add="myFn($chip)"
+	                    md-on-remove="myFnn($chip)"
+	                      readonly="readonly"
+	                    ng-click="getSelectedChipIndex($event)" hard-change="fn()">
+                            <md-autocomplete md-selected-item="selectedItem.name" md-search-text="searchText" md-items="item in chipSearch(searchText)" md-item-text="item.name"  md-min-length="3" placeholder="Enter a Dependency">
+                                <span md-highlight-text="searchText">
+                                    {{item}}
+                                </span>
+                            </md-autocomplete>
+                                <md-chip-template>
+                                    <span>{{$chip}}</span>
+                                </md-chip-template>
+                    </md-chips>
+                   
+                </div>
+               </div>
+             </div>
+            </section>
+            <section layout-wrap flex id="bpacks_deps"> 
+            <div  id="dep_lbl" class="row" style="padding:13px;" layout="row" layout-align="center">
+                    <md-checkbox ng-model="dependencyFlag" aria-label="Show dependencies">
+                        Show dependencies
+                    </md-checkbox>
+                </div>
+             <div layout="row" layout-xs="column" layout-align="center center" > 
+
+              
+                <div class="row" ng-show="dependencyFlag">
+                               
+               
+							
+                            <div layout="row" layout-xs="column" >
+                                <div layout="column" class="form-group" flex="50" ng-repeat="(k1, v1) in dependenciesList">
+                                    <h3>{{k1}}</h3>
+                                    <md-checkbox data-range="null" name="{{k2}}" value="{{k2}}" ng-model="v2.value" ng-repeat="(k2, v2) in v1" ng-click="onAddChip(v2)">
+                                        <label>
+                                            {{v2.name}}
+                                            <p class="help-block">{{v2.description}}</p>
+                                        </label>
+                                    </md-checkbox><br/>
+                                </div>
+                            </div>
+                                    
+                       
+                </div>  
+            </section>
+            <!--  <pre>{{def.program.project.bp|json}}</pre>   -->
+        </fieldset>
+    </form>
+</div>

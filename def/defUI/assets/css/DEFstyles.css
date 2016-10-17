@@ -1,0 +1,181 @@
+/*DEF CSS*/
+md-toolbar {
+  /*font-size: 20px;*/
+  min-height: 100px;
+}
+.md-toolbar-tools {
+    font-size: 40px !important;
+    height: 100px !important;
+    max-height: 100px !important;
+}
+
+/* @@@ Ishtiaq css for wizard start @@@*/
+.stepwizard-step p {
+    margin-top: 10px;
+}
+.stepwizard-row {
+    display: table-row;
+}
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+.stepwizard-row:before {
+    top: 25px; /* Prev 14px*/
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+}
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+.stepwizard-row > .stepwizard-step{
+    width: 14.25% !important;
+}
+
+
+a[disabled="disabled"] {
+    pointer-events: none;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+    background-color:#60A1EB;
+    color:#fff
+}
+
+.btn-circle.active {
+    background-color:#F3F797;
+    color:#000
+}
+.popover-example .popover {
+    position: relative;
+    display: block;
+    margin: 20px;
+    z-index: 0;
+}
+.P_T_1v{
+    padding-top: 1vw;
+}
+
+/* @@@ Ishtiaq css for wizard end @@@*/
+.md-button svg {
+  fill: inherit;
+}
+md-input-container {
+  margin-right: 10px; }
+/* 09-Aug-2016 */
+md-list-item.md-2-line, md-list-item.md-2-line > ._md-no-style {
+    height: 70px;
+}
+.help-block{
+    font-size: 75%;
+}
+a.md-button.active {
+    background-color:#F3F797 !important;
+    color:#000 !important;
+}
+.md-green{
+    background-color: #75D672 !important;
+    color: #FFF !important;
+}
+
+md-chips.md-contact-chips, md-chips.md-chips, md-chips-wrap.md-chips{
+    max-width: 500px !important;
+}
+#bpacks_id md-chips.md-contact-chips, #bpacks_id md-chips.md-chips, #bpacks_id md-chips-wrap.md-chips, #bpacks_id md-select-value._md-select-value{
+    max-width: 260px !important;
+}
+md-checkbox.md-default-theme.md-checked ._md-icon, md-checkbox.md-checked ._md-icon {
+    background-color: rgb(255, 87, 34) !important;
+}
+.vertical-divider {
+  border-top-width: 0;
+  border-right-width: 2px;
+  border-right-style: solid;
+  max-height: 100%;
+  padding-left: 1vw;
+}
+.P_L_1{
+    padding-left: 1vw;
+}
+.mycontainer{
+    padding: 4vw 8vw 4vw 8vw !important;
+}
+.valid{
+    color: red;
+}
+.mycontainer md-select{
+    padding-right: 1.5vw;
+}
+
+/** for tab **/
+
+.tabsdemoDynamicTabs md-content {
+  background-color: transparent !important; }
+  .tabsdemoDynamicTabs md-content md-tabs {
+    border: 1px solid #e1e1e1; }
+    .tabsdemoDynamicTabs md-content md-tabs md-tab-content {
+      background: #f6f6f6; }
+    .tabsdemoDynamicTabs md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .tabsdemoDynamicTabs md-content h1:first-child {
+    margin-top: 0; }
+
+.tabsdemoDynamicTabs md-input-container {
+  padding-bottom: 0; }
+
+.tabsdemoDynamicTabs .remove-tab {
+  margin-bottom: 40px; }
+
+.tabsdemoDynamicTabs .demo-tab > div > div {
+  padding: 25px;
+  box-sizing: border-box; }
+
+.tabsdemoDynamicTabs .edit-form input {
+  width: 100%; }
+
+.tabsdemoDynamicTabs md-tabs {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+
+.tabsdemoDynamicTabs md-tab[disabled] {
+  opacity: 0.5; }
+
+.tabsdemoDynamicTabs label {
+  text-align: left; }
+
+.tabsdemoDynamicTabs .long > input {
+  width: 264px; }
+
+.tabsdemoDynamicTabs .md-button.add-tab {
+  transform: translateY(5px); }
+
+/* Test*/
+
+.tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0; }
+

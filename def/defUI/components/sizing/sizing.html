@@ -1,0 +1,178 @@
+    <div class="row" ng-controller="SizingController as sizingctrl">
+    <form role="form" name="sizingform" novalidate>
+        <fieldset>
+                <div class="form-group mycontainer">
+                    <div layout="row">
+                    </div>
+                   <div layout="row">
+                        <div flex>&nbsp;</div>
+                        <div flex layout="row" layout-align="center center"><span class="md-title">
+                                    Dev 
+                                </span></div>
+                        <div flex layout="row" layout-align="center center"><span class="md-title">
+                                    QE
+                                </span></div>
+                        <div flex layout="row" layout-align="center center"><span class="md-title">
+                                    Staging                 
+                                </span></div>
+                        <div flex layout="row" layout-align="center center"><span class="md-title">
+                                    UAT
+                                </span></div>
+                        <div flex layout="row" layout-align="center center"><span class="md-title">
+                                Prod 
+                                </span></div>
+                    </div>
+                    <div layout="row" class="md-body-2">
+                        <div flex>
+                            <span class="md-title">
+                                    Instances<span class="valid">*&nbsp;&nbsp;</span>
+                            </span>
+                        </div>
+                        <div flex>
+                            <md-select id="devinstance" name="devinstance" class="form-control" ng-model="def.program.project.sizing.dev.instances">
+                                    <md-option value="1" >1</md-option>
+                                    <md-option value="2">2</md-option>
+                                    <md-option value="3">3</md-option>
+                                    <md-option value="4">4</md-option>
+                                    <md-option value="5">5</md-option>
+                                </md-select>
+                        </div>
+                        <div flex>
+                            <md-select id="qeinstance" name="qeinstance" class="form-control" ng-model="def.program.project.sizing.qe.instances">
+                                    <md-option value="1" >1</md-option>
+                                    <md-option value="2">2</md-option>
+                                    <md-option value="3">3</md-option>
+                                    <md-option value="4">4</md-option>
+                                    <md-option value="5">5</md-option>
+                                </md-select>
+                        </div>
+                        <div flex>
+                            <md-select id="stginstance" name="stginstance" class="form-control" ng-model="def.program.project.sizing.staging.instances">
+                                    <md-option value="1" >1</md-option>
+                                    <md-option value="2">2</md-option>
+                                    <md-option value="3">3</md-option>
+                                    <md-option value="4">4</md-option>
+                                    <md-option value="5">5</md-option>
+                                </md-select>
+                        </div>
+                        <div flex>
+                            <md-select id="uatinstance" name="uatinstance" class="form-control" ng-model="def.program.project.sizing.uat.instances">
+                                    <md-option value="1" >1</md-option>
+                                    <md-option value="2">2</md-option>
+                                    <md-option value="3">3</md-option>
+                                    <md-option value="4">4</md-option>
+                                    <md-option value="5">5</md-option>
+                                </md-select>
+                        </div>
+                        <div flex>
+                            <md-select id="prodinstance" name="prodinstance" class="form-control" ng-model="def.program.project.sizing.prod.instances">
+                                    <md-option value="1">1</md-option>
+                                    <md-option value="2">2</md-option>
+                                    <md-option value="3">3</md-option>
+                                    <md-option value="4">4</md-option>
+                                    <md-option value="5">5</md-option>
+                                </md-select>
+                        </div>
+                    </div>
+                    <div layout="row" class="md-body-2">
+                        <div flex>
+                            <span class="md-title">
+                                Memory<span class="valid">*&nbsp;&nbsp;</span>
+                            </span>
+                        </div>
+                        <div flex>
+                            <md-select id="devmem" name="devmem" class="form-control" ng-model="def.program.project.sizing.dev.memory">
+                                <md-option value="512mb" >512MB</md-option>
+                                <md-option value="1gb">1GB</md-option>
+                                <md-option value="1.5gb">1.5GB</md-option>
+                                <md-option value="2gb">2GB</md-option>
+                                <md-option value="2.5gb">2.5GB</md-option>
+                            </md-select> 
+                        </div>
+                        <div flex>
+                            <md-select id="qemem" name="qemem" class="form-control" ng-model="def.program.project.sizing.qe.memory">
+                                <md-option value="512mb" >512MB</md-option>
+                                <md-option value="1gb">1GB</md-option>
+                                <md-option value="1.5gb">1.5GB</md-option>
+                                <md-option value="2gb">2GB</md-option>
+                                <md-option value="2.5gb">2.5GB</md-option>
+                            </md-select> 
+                        </div>
+                        <div flex>
+                            <md-select id="stgmem" name="stgmem" class="form-control" ng-model="def.program.project.sizing.staging.memory">
+                                <md-option value="512mb" >512MB</md-option>
+                                <md-option value="1gb">1GB</md-option>
+                                <md-option value="1.5gb">1.5GB</md-option>
+                                <md-option value="2gb">2GB</md-option>
+                                <md-option value="2.5gb">2.5GB</md-option>
+                            </md-select> 
+                        </div>
+                        <div flex>
+                            <md-select id="uatmem" name="uatmem" class="form-control" ng-model="def.program.project.sizing.uat.memory">
+                                <md-option value="512mb" >512MB</md-option>
+                                <md-option value="1gb">1GB</md-option>
+                                <md-option value="1.5gb">1.5GB</md-option>
+                                <md-option value="2gb">2GB</md-option>
+                                <md-option value="2.5gb">2.5GB</md-option>
+                            </md-select> 
+                        </div>
+                        <div flex>
+                            <md-select id="prodmem" name="prodmem" class="form-control" ng-model="def.program.project.sizing.prod.memory">
+                                <md-option value="512mb" >512MB</md-option>
+                                <md-option value="1gb">1GB</md-option>
+                                <md-option value="1.5gb">1.5GB</md-option>
+                                <md-option value="2gb">2GB</md-option>
+                                <md-option value="2.5gb">2.5GB</md-option>
+                            </md-select> 
+                        </div>
+                    </div>
+                     <div layout="row" ng-if="formData.services == 'MongoDB'">
+                          <h3 class="text-center">Services</h3>
+                     </div>
+                     <div layout="row" class="md-body-2" ng-if="formData.services == 'MongoDB'">
+                         <div flex >
+                             <span class="md-title">
+                                MongoDB <span class="valid">*&nbsp;&nbsp;</span>
+                            </span>
+                         </div>
+                         <div flex>
+                            <md-select id="devser1" name="devser1" class="form-control" ng-model="formData.devser1">
+                                <md-option value="basic" >Basic</md-option>
+                                <md-option value="premium">Premium</md-option>
+                                <md-option value="elite">Elite</md-option>
+                            </md-select>
+                         </div>
+                         <div flex>
+                            <md-select id="qeser1" name="qeser1" class="form-control" ng-model="formData.qeser1">
+                                <md-option value="basic" >Basic</md-option>
+                                <md-option value="premium">Premium</md-option>
+                                <md-option value="elite">Elite</md-option>
+                            </md-select> 
+                         </div>
+                         <div flex>
+                            <md-select id="stgser1" name="stgser1" class="form-control" ng-model="formData.stgser1">
+                                <md-option value="basic" >Basic</md-option>
+                                <md-option value="premium">Premium</md-option>
+                                <md-option value="elite">Elite</md-option>
+                            </md-select> 
+                         </div>
+                         <div flex>
+                            <md-select id="uatser1" name="uatser1" class="form-control" ng-model="formData.uatser1">
+                                <md-option value="basic" >Basic</md-option>
+                                <md-option value="premium">Premium</md-option>
+                                <md-option value="elite">Elite</md-option>
+                            </md-select>
+                         </div>
+                         <div flex>
+                            <md-select id="prodser1" name="prodser1" class="form-control" ng-model="formData.prodser1">
+                                <md-option value="basic" >Basic</md-option>
+                                <md-option value="premium">Premium</md-option>
+                                <md-option value="elite">Elite</md-option>
+                            </md-select>
+                         </div>
+                     </div> 
+                </div>
+                <!-- <pre>{{def.program.project.sizing|json}}</pre> -->
+        </fieldset>
+    </form>
+</div>

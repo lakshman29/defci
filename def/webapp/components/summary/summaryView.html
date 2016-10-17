@@ -1,0 +1,25 @@
+<div class="row" ng-controller="summaryController as sumctrl">
+
+    <form role="form" name="summaryform" novalidate>
+        <fieldset>
+            
+            <div layout="row" layout-align="center center">
+            <div >
+                <h4 class="modal-title" id="myModalLabel">Summary</h4>
+                <pre>
+                    Congratulations !!<br/>
+                    All Environments, Tools, Frameworks will be automatically Provisioned.<br/>
+                    All Team Members will be provided access to the tools and Environments and an email will be triggered with links.
+                </pre>
+                    <img class="img-responsive"ng-src="assets/img/concourse.gif" alt="concourse" /><br/>
+                <pre>{{formData|json}}</pre>
+                <section layout="row" layout-align="center center" flex> 
+                <!-- <md-button class="md-raised md-primary" ng-click="sumctrl.summaryredirect('#/alm')">Go back</md-button> -->
+                <md-button class="md-raised md-warn" ng-click="sumctrl.submit(def.program)">Generate</md-button>
+                </section>
+            </div>
+            </div>
+        </fieldset>
+         <pre>{{def.program|json}}</pre>  
+    </form>
+</div>
