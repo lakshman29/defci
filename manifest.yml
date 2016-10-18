@@ -1,6 +1,6 @@
 ---
 applications:
-- name: concourse-maven-cf-simple
+- name: def
   memory: 512M
   timeout: 180
   instances: 1
